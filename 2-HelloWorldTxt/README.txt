@@ -1,23 +1,23 @@
 /*
  *	Author: Cui Yingjie (cuiyingjie@nihuo.com)
  *	GitHub: https://github.com/nihuo/Nginx-Module-Development-Tutorial
- *	Nginx Module Development Tutorial 1 - Hello World
+ *	Nginx Module Development Tutorial 2 - Hello World Txt
  * 
  */
 
 1) Introduction
 =====================================================================
-Please read below documents at first:
-	1) http://www.nginxguts.com/2011/01/plugs/
+It's based on Hello World module, an extra message which can be customized
+in nginx.conf could be displayed with hello message.
 
+Two new functions are added to process configuration data:
+	ngx_http_hello_world_txt_create_loc_conf
+	ngx_http_hello_world_txt_merge_loc_conf
 
-It's a most simple nginx module. There are just two files:
-	config
-		Tell building system how to huild this module.
+New struct (ngx_http_hello_world_txt_loc_conf) has been declared to store 
+configuration data.
 
-	ngx_http_hello_world_module.c
-		C code.
-
+Configuration data will be gotten in ngx_http_hello_world_txt_conf_handler. 
 
 
 2) Build
@@ -27,7 +27,7 @@ Enter folder which nginx source is in and run below commands:
 ./configure --add-module=[full path of module folder]
 
 	e.g.
-	./configure --add-module=/Users/nihuo/projects/Nginx-Module-Development-Tutorial/1-HelloWorld
+	./configure --add-module=/Users/nihuo/projects/Nginx-Module-Development-Tutorial/2-HelloWorldTxt
 
 make
 make install
@@ -38,16 +38,11 @@ nginx will be installed into /usr/local/nginx
 
 3) Run
 =====================================================================
-A> Edit /usr/local/nginx/conf/nginx.conf. Add hello_world directive. 
+A> Edit /usr/local/nginx/conf/nginx.conf. Add hello_world_txt directive. 
 
 	location / {
-		hello_world;
+		hello_world_txt	" My Friends";
 	}
-
-	Recommend change listen port to a new one which is bigger than 1024.
-	e.g.
-		listen       8000;
-
 
 B> Run below command:
 
