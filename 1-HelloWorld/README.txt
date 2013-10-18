@@ -11,7 +11,9 @@ Please read below documents at first:
 	1) http://www.nginxguts.com/2011/01/plugs/
 
 
-It's a most simple nginx module. There are just two files:
+It's a most simple nginx module. Just display hello world message.
+
+There are just two files:
 	config
 		Tell building system how to huild this module.
 
