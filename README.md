@@ -14,6 +14,7 @@ Nginx-Module-Development-Tutorial
 The tutorial is for newbies of nginx module development. It's free for all. 
 
 You are assumed to have below knowledge:
+
 	A> C programmming
 	B> HTTP (http header, cookie, url....)
 	C> Summary of how nginx work
@@ -32,10 +33,14 @@ A> Below documents are strongly recommended to be read at first:
 	2. http://antoine.bonavita.free.fr/nginx_mod_dev_en.html
 
 B> Take tutorials in sub folder as order. 
+
 C> Take each tutorial from reading readme.txt at first
+
 D> Read code
 	You should pay attention to comments in codes.
+	
 F> Build it and test it
+
 G> Try to modify it
 
 
@@ -44,7 +49,8 @@ G> Try to modify it
 The tutorial is developed in OSX 10.8.5. I think it will be ok is most system. 
 OSX and Linux is recommended. 
 
-A> Requirement
+A> Requirements
+
 	a. PCRE library ( it's required for compiling nginx)
 		It can be installed in OSX via below commands:
 			brew install PCRE
